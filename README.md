@@ -3,7 +3,7 @@
 ## !!! DEPRECATED !!!
 ** This package a fork of https://github.com/philsturgeon/codeigniter-curl
 ** with the addition for a curl_multi support, check the last function of the model
-** Phil has stopped support for this library and I do not promise any support, use at your own risk
+Phil has stopped support for this library and I do not promise any support, use at your own risk
 
 [Guzzle]: http://guzzlephp.org
 [Requests]: http://requests.ryanmccue.info/
@@ -13,7 +13,7 @@ and makes more complicated cURL requests easier too.
 
 
 ## Usage of curl_multi
-Simply, call $this->curl->multiRequest($requests,$options) from your controller.
+Simply, call `$this->curl->multiRequest($requests,$options)` from your controller.
 
 ## Structure of $requests
 ### for get requests
