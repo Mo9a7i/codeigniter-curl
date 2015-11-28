@@ -414,14 +414,17 @@ class Curl {
 			if (is_array($d)) {
 				if (!empty($d['post'])) {
 					curl_setopt($curly[$id], CURLOPT_POST,       1);
+					if(is_array($d['post']))
 					curl_setopt($curly[$id], CURLOPT_POSTFIELDS, $d['post']);
 				}
 				elseif (!empty($d['put'])) {
-					curl_setopt($curly[$id], CURLOPT_CUSTOMREQUEST,       'put');
+					curl_setopt($curly[$id], CURLOPT_CUSTOMREQUEST,       'PUT');
+					if(is_array($d['put']))
 					curl_setopt($curly[$id], CURLOPT_POSTFIELDS, $d['put']);
 				}
 				elseif (!empty($d['delete'])) {
 					curl_setopt($curly[$id], CURLOPT_CUSTOMREQUEST,       'DELETE');
+					if(is_array($d['delete']))
 					curl_setopt($curly[$id], CURLOPT_POSTFIELDS, $d['delete']);
 				}
 			}
@@ -430,10 +433,9 @@ class Curl {
 			if (!empty($options)) {
 				curl_setopt_array($curly[$id], $options);
 			}
-
 			curl_multi_add_handle($mh, $curly[$id]);
 		}
-
+		
 		// execute the handles
 		$running = null;
 		do {
